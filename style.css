@@ -148,3 +148,7 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+
+.estudoled {
+    text-align: justify;
+}

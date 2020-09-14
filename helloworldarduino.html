@@ -25,7 +25,7 @@
             <h3>Passo a passo</h3>
             <div class="title">
             <p>Com os materiais separados, vamos começar.</p>
-            <p>Na protoboard, encaixe os terminais do resistor e o LED conforme a imagem:</p></div>
+            <p>Na protoboard, encaixe os terminais do resistor (não se preocupe, ele não possui polaridade) e o LED conforme a imagem, mas atenção o LED possui polaridade, se estiver em dúvida ao colocar o LED, não se preocupe <a href="#explicandoled">clique aqui e saiba mais sobre o LED</a>, caso você coloque o LED com as polaridades invertidas e não funcionar, apenas inverta os terminais para que ele funcione corretamente.</p></div>
             <div class="passos">
             <img src="imagens/conectando-os-componentes.jpg" alt="Conectando os componentes à protoboard" /></div>
             <p class="title">Agora conecte um jumper ao terminal do resistor que não esta conectardo ao LED e outro jumper no terminal do LED que não esta conectado ao resistor, conforme a imagem:</p>
@@ -71,6 +71,10 @@
             <p>Este comando "pausa" o Arduino pelo tempo passado entre os parênteses, fazendo ele esperar algum tempo. Esse tempo é dado em milisegundos, no caso do nosso projeto, fizemos o Arduino aguardar durante 1 segundo, entre acender o LED e apagar o LED.</p>
             <h4 class="resumindo">Resumindo...</h4>
             <p>No void setup, configuramos o pino digital 7 do nosso Arduino como saída. Após isso, no void loop, fizemos o comando para ligar o LED digitalWrite(7,HIGH), esperar 1 segundo delay(1000), apagar o LED digitalWrite(7,LOW), e depois esperar mais 1 segundo.</p>
+            <hr />
+            <section id="explicandoled">
+            <h3>Desvendando o LED</h3></section>
+            <p class="estudoled">Os LED's são componentes semicondutores emissores de luz que possuem polaridade. O LED possui um terminal chamado de Anodo (positivo) e Catodo (negativo), ao utiliza-lo em seus projetos, lembre sempre de verificar se está instalando o componente de modo correto e nunca esqueça que o LED sempre precisará de um resistor limitar de corrente para que não queime.</p>
         </main>
         <nav>
             <ul> Navegação
