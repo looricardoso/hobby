@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+
+body {
+    margin: 0 auto;
+    min-height: 100vh;
+    max-width: 1440px;
+    display: flex;
+    flex-flow: column;
+}
+
+.hg-conteudo {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+}
+
+.hg-conteudo > nav {
+    order: -1;
+}
+
+.hg-conteudo > main {
+    flex: 1;
+    /*margin: 25px;*/
+    border-style: solid;
+    border-width: 15px;
+    border-color: white;
+}
+
+@media (min-width: 768px) {
+    .hg-conteudo {
+        flex-flow: row;
+    }
+
+    .hg-conteudo > aside,
+    .hg-conteudo > nav {
+        flex: 0 0 200px;
+    }
+}
+
+/* Início da estilização das páginas */
+
+header {
+    background-image: url(imagens/fundo-cabecalho.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.cabecalho {
+    text-shadow: 5px 5px 3px rgba(255, 255, 255, 0.5);
+    font-family: 'Hind', sans-serif;
+}
+
+main {
+    background-color: white;
+}
+
+nav {
+    background-color: rgba(222, 184, 135, 0.432);
+    color: burlywood;
+}
+
+aside {
+    background-color: rgba(135, 206, 250, 0.500);
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+
+}
+.title {
+    background-color: burlywood;
+    margin: 25px 0 25px 0;
+    border-radius: 15px;
+    padding: 0 10px 0 10px;
+    text-align: justify;
+}
+
+.ocodigo {
+    background-color: darkcyan;
+    border-radius: 25px;
+    padding: 1%;
+}
+
+img {
+    border-radius: 25px;
+    width: 55%;
+    box-shadow: 2px solid black;
+}
+
+.resumindo {
+    background-color: darksalmon;
+    border-radius: 25px;
+    padding: 0 0 0 10px;
+}
+
+.subtitulo {
+    border-radius: 25px;
+    padding: 2%;
+    background-color: lightblue;
+}
+
+footer {
+    background-image: url(imagens/rodape.jpg);
+    background-size: cover;
+    padding: 25px;
+    color: navy;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 700;*/
+    /*font-size: 1.5em;*/
+}
+footer:hover {
+    color: crimson;
+    text-shadow: 5px 5px 5px black;
+}
+
+.parabens {
+    border-radius: 25px;
+    padding: 2%;
+    background-color: rgba(105, 90, 205, 0.74);
+    color: whitesmoke;
+}
+
+.explicacao {
+    text-align: justify;
+}
+
+a:link {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: silver;
+}
+
+a:active {
+    text-decoration: none;
+}

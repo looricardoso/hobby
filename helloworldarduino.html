@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício hobby - Hello World com Arduino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><div class="cabecalhofundo"><h1 class="cabecalho">Hobby - Arduino</h1></div></header>
+    <div class="hg-conteudo">
+        <main>
+            <h1>Hello World com o Arduino</h1>
+            <div class="subtitulo">
+            <p>Agora que você já conheceu um pouquinho sobre o que é o Arduino, já poderemos construir nossa primeira montagem na placa de desenvolvimento.</p>
+            <p>Vamos lá ?</p></div>
+            <h3>O que vamos precisar ?</h2>
+                <ul>Materiais:
+                    <li>1. Placa de desenvolvimento Arduino Uno</li>
+                    <li>1. Resistor 1KΩ</li>
+                    <li>1. LED (pode ser de qualquer cor, aqui vamos utilizar um vermelho)</li>
+                    <li>1. Protoboard (também conhecida como placa de ensaio)</li>
+                    <li>2. Jumpers para conexão dos componentes ao Arduino</li>
+                </ul>
+            <h3>Passo a passo</h3>
+            <div class="title">
+            <p>Com os materiais separados, vamos começar.</p>
+            <p>Na protoboard, encaixe os terminais do resistor e o LED conforme a imagem:</p></div>
+            <div class="passos">
+            <img src="imagens/conectando-os-componentes.jpg" alt="Conectando os componentes à protoboard" /></div>
+            <p class="title">Agora conecte um jumper ao terminal do resistor que não esta conectardo ao LED e outro jumper no terminal do LED que não esta conectado ao resistor, conforme a imagem:</p>
+            <div class="passos">
+            <img class="passos" src="imagens/conectando-os-jumpers-aos-componentes.jpg" alt="Conectando os jumpers aos componentes" /></div>
+            <div class="title">
+            <p>Conecte o jumper que esta conectado ao resistor à porta digital 7 do Arduino, e o jumper que esta conectado ao LED no pino GND do Arduino:</p></div>
+            <div class="passos">
+            <img class="passos" src="imagens/conectando-jumpers-ao-arduino.jpg" alt="Conetando os jumpers aos Arduino" /></div>
+            <div class="title">
+            <p>O circuito montado, deve estar parecido com o das imagens a seguir:</p></div>
+            <div class="passos">
+            <img class="passos" src="imagens/circuitomontado.JPG" alt="Circuito montado, LED conectado a um resistor e ao Arduino" />
+            <img class="passos" src="imagens/circuito-montado-dois.jpg" alt="Circuito montado, LED e um resistor conectados à protoboard e ligados ao Arduino através de jumpers" /></div>
+            <div class="title">
+            <p>Agora conecte seu Arduino através do cabo USB à uma porta USB disponível do seu computador.</p></div>
+            <h3>A programação</h3>
+            <p>Com o protótipo montado podemos partir para o código.</p>
+            <div class="title">
+            <p>Abra a IDE do Arduino.</p>
+            <p>No sketch, escreva os comandos da imagem a seguir: </p></div>
+            <img src="imagens/codigo.jpg" alt="Código de programação" />
+            <div class="title">
+            <p>Agora clique no menu Sketch da IDE do Arduino e depois em Carregar, se pedir para salvar o código, escolha uma pasta de sua preferência e salve o projeto. Após salvar, o sketch será compilado e carregado para o Arduino, com isso você já verá o LED piscando em sua protoboard. 😁</p></div>
+            <p class="parabens">Parabéns !!!</p>
+            <h3>Explicando o código</h3>
+            <div class="subtitulo">
+            <p>Você fez o projeto, viu o LED piscar, mas deve estar se perguntando, o que será que faz cada comando digitado na IDE do Arduino ??</p></div>
+            <p>Bom, para sua sorte, vamos exlicar.</p>
+            <h4 class="ocodigo">O bloco void setup() { }</h4>
+            <img src="imagens/codigo_void-setup.JPG" alt="IDE Arduino Explicando o void setup" />
+            <p>No bloco void setup, é onde vamos configurar os pinos do Arduino, como entrada se precisarmos ler uma informação externa, como um botão ou um sensor por exemplo, ou como saída, para controlar um LED ou um relé. Os comandos que vão sempre entre as chaves {}.</p>
+            <h4 class="ocodigo">O bloco void loop() { }</h4>
+            <img src="imagens/codigo_void-loop.JPG" alt="IDE Arduino Explicando o void loop" />
+            <p>Nesse bloco é onde colocaremos o que queremos que o Arduino faça. Que leia uma informação externa e faça alguma coisa, como exemplo, que verifique que um botão foi pressionado e se for pressionado, acenda um LED. O void loop como o nome já diz, é um loop infinito, o programa escrito nesse bloco, será reproduzido infinitamente pelo Arduino até ser desligado.</p>
+            <h3>Os comandos:</h3>
+            <img src="imagens/codigo_comandos.JPG" alt="IDE Arduino Explicando os comandos pinMode, digitalWrite e delay" />
+            <h4 class="ocodigo">pinMode(7,OUTPUT);</h4>
+            <p>O comando pinMode, configura o pino indicado como saída ou como entrada, no caso do nosso projeto, indicamos o pino número 7 que é um pino digital como saída (OUTPUT). Se quiséssemos que esse pino ao invés de controlar um LED, verificasse o estado de um botão, teríamos que configurá-lo como entrada (INPUT).</p>
+            <h4 class="ocodigo">digitalWrite(7,HIGH);</h4>
+            <p>Este comando configura o Arduino para que faça com que a saída configurada passe a ter 5V em sua saída (HIGH). No nosso projeto Hello World, para ligar o LED passamos o parâmetro (HIGH) no comando digitalWrite, fazendo com que os 5V ligassem o LED.</p>
+            <h4 class="ocodigo">delay(1000);</h4>
+            <p>Este comando "pausa" o Arduino pelo tempo passado entre os parênteses, fazendo ele esperar algum tempo. Esse tempo é dado em milisegundos, no caso do nosso projeto, fizemos o Arduino aguardar durante 1 segundo, entre acender o LED e apagar o LED.</p>
+            <h4 class="resumindo">Resumindo...</h4>
+            <p>No void setup, configuramos o pino digital 7 do nosso Arduino como saída. Após isso, no void loop, fizemos o comando para ligar o LED digitalWrite(7,HIGH), esperar 1 segundo delay(1000), apagar o LED digitalWrite(7,LOW), e depois esperar mais 1 segundo.</p>
+        </main>
+        <nav>
+            <ul> Navegação
+                <li><a href="oqueearduino.html">O que é Arduino ?</a> </li>
+                <li><a href="vantagensarduino.html">Quais as vantagens ?</a></li>
+                <li><a href="helloworldarduino.html">Hello World no Arduino</a></li>
+                <hr />
+                <li><a href="index.html">Voltar ao Início</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <ul>Link interessantes
+                <li><a href="https://www.arduino.cc/" target="_blank">Site Oficial do Arduino</a></li>
+                <li><a href="https://www.arduino.cc/en/Main/Software" target="_blank">Dowload da IDE do Arduino</a></li>
+                <li><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" target="_blank">Datasheet do ATMEGA328p</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>Criado por <a href="https://github.com/looricardoso">Lorival Cardoso</a> | 2020</footer>
+</body>
+</html>
